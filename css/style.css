@@ -17,6 +17,11 @@ main {
 a{
     text-decoration: none;
 }
+ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+}
 
 /*----------------------
 hero section styles----------*/
@@ -31,7 +36,6 @@ hero section styles----------*/
 }
 
 .hero-left-side {
-    /* margin-top: 207px; */
     margin-left: 156px;
 
 }
@@ -44,24 +48,6 @@ hero section styles----------*/
     margin-bottom: 25px;
     
 }
-a.hero-btn {
-    background-color: #E02C6D;
-    padding: 10px 24px;
-    color: #fff;
-    font-weight: normal;
-}
-/*---------------------------------------
-rotation and transition on button-------  */
-a.hero-btn:hover {
-    background-color: #673ab7;
-    transition: background-color 1s ease-in;
-}
-a.hero-btn:hover .btn-arrow {
-    transform: rotate(90deg);
-    transition: transform 1s ease-in;
-    /* background-color: violet; */
-}
-
 i.fas.fa-arrow-right.btn-arrow {
     padding-left: 8px;
 }
@@ -69,6 +55,34 @@ img.hero-img {
     width: 560px;
     height: 440px;
 }
+a.link-btn {
+    background-color: #E02C6D;
+    padding: 10px 24px;
+    color: #fff;
+    font-weight: normal;
+}
+/*---------------------------------------
+rotation and transition on button-------  */
+a.link-btn:hover {
+    background-color: #673ab7;
+    transition: background-color 1s ease-in;
+}
+a.link-btn:hover .btn-arrow {
+    transform: rotate(90deg);
+    transition: transform 1s ease-in;
+    /* background-color: violet; */
+}
+.hero-img{
+    transition: transform 2s ease-in-out;
+}
+
+.hero-right-side:hover .hero-img{
+    transform: scale(1.2);
+    transition: transform 2s ease-in-out;
+}
+
+/*---------------------------------------
+Player section style-------  */
 
 section.players-section {
     width: 80%;
@@ -89,12 +103,6 @@ section.players-section {
 
     overflow: hidden;
 }
-/*.player-details {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-   
-}*/
 
 img.player-thumbnail {
     width: 300px;
@@ -115,6 +123,85 @@ p.description {
     line-height: 26px;
     color: #6C6C6C;
 }
+
+/*----------------------
+trophy section styles----------*/
+.trophy-section {
+    width: 80%;
+    background-color: #00bcd414;
+    padding: 50px 0px 50px;
+}
+.trophy-room {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-column-gap: 102px;
+}
+
+.trophy-left-side {
+    margin-left: 156px;
+
+}
+.trophy-left-side h1 {
+    text-align: center;
+}
+ul.winnig-year {
+    padding: 10px;
+    background-color: #2d25a0;
+}
+ul.winnig-year li a {
+    margin-left: 15px;
+    color: #fff;
+    margin-right: 20px;
+}
+ul.winnig-year li {
+    display: inline;
+}
+ul.winnig-year li a {
+    margin-left: 10px;
+    color: #fff;
+    margin-right: 20px;
+}
+ul.winnig-year li a.active {
+    background-color: #e02c6d;
+    padding: 11px 10px;
+}
+a.link-btn.trophy-btn {
+    margin-top: 50px;
+    display: inline-block;
+    width: 150px;
+    border-radius: 50px;
+    text-align: center;
+}
+/*--------------------------
+------sponsor section styles*/
+.sponsor-section {
+    margin-top: 50px;
+    margin-bottom: 120px;
+}
+h2.sponsor-title {
+    color: #e02c6d;
+    font-weight: 500;
+    font-size: 36px;
+    margin-top: 3px;
+    text-align: center;
+}
+.sponsors{
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    grid-column-gap: 50px;
+}
+.sponsor{
+    display: flex;
+    align-items: center;
+}
+
+.sponsor img {
+    width: 80%;
+}
+
+
+/*-----------------------
+-----------footer styles*/
 .footer-main {
     display: flex;
     flex-direction: column;
@@ -137,21 +224,84 @@ span.social-icons a {
 
 /*media queries for mobile devices*/
 @media only screen and (max-width: 688px) {
-    
+
+    /* -----Hero section---- */
     .hero-content {
         grid-template-columns: repeat(1,1fr);
     }
-    section.players-section {
+    section.hero-section {
         width: 100%;
     }
-    .players {
-       
-        grid-template-columns: repeat(1,1fr);
-     
+    .hero-left-side {
+        margin-left: 30px;
     }
-    
-    .player {
-        margin-left: 42px;
+    h1.hero-section-title {
+        font-size: 34px;
+    }
+    section.hero-section {
+        padding: 40px 0px 50px 0px;
+    }
+    img.hero-img {
+        width: 90%;
+        padding-top: 50px;
+        margin-left: 20px;
+        height: auto;
+    }
+ /* -----Players section---- */
+    section.players-section {
+        width: 100%;
+        margin-bottom: 50px;
+    }
+   
+    .players {      
+        grid-template-columns: repeat(1,1fr); 
+    }
+    .player {  
+        margin: auto;
+        display: block;
+    }
+    /* -----Trophy section---- */
+    .trophy-room {
+        grid-template-columns: repeat(1,1fr);
+    }
+    section.trophy-section {
+        width: 100%;
+    }
+    .trophy-left-side {
+        padding: 10px;
+        margin-left: 0;
+    }
+    a.link-btn.trophy-btn {
+       
+        margin-left: 75px;
+    }
+    .trophy-img img {
+        width: 30%;
+    }
+    .trophy-right-side p {
+        text-align: center;
+    }
+  /* -----Sponsors section---- */
+    .sponsor-section {
+        margin-bottom: 30px;
+    }
+    .sponsors{
+        grid-template-columns: repeat(1,1fr);
+        grid-row-gap: 30px;
+    }
+   
+    .sponsor {
+
+        flex-direction: column;
+    }
+        /* -----Footer section---- */
+    img.ft-logo {
+        width: 250px;
+        height: auto; 
+    }
+    footer.footer {
+        margin-bottom: 140px;
+        margin-top: 54px
     }
 
 }
